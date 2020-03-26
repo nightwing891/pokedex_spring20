@@ -1,24 +1,20 @@
-# README
+   Back end 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+   Pokemon 
+    name
+    level integer
+    location
+    type
+    move
 
-Things you may want to cover:
+    Front end planning 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+      index
+        |
+       App (Nav Routes)
+    /   |            \        \
+ Home  Pokedex (HOC)  about  noMatch   pages
+        / \
+PokeForm   PokeList
+             | 
+            Pokemon
