@@ -16,5 +16,6 @@
  Home  Pokedex (HOC)  about  noMatch   pages
         / \
 PokeForm   PokeList
-             | 
+  add           | 
             Pokemon
+               pokeForm (edit)
