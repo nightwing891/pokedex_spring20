@@ -1,38 +1,32 @@
 import React, { Component } from 'react';
 import PokeForm from './PokeForm';
 import { Button } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
 
-class Pokemon extends Component {
+class PokeShow extends Component {
   state = { showForm: false } 
 
   toggleForm = () => this.setState({ showForm: !this.state.showForm })
 
   render() {
-    const { name, location, level, move, id } = this.props
+    const { name, location, level, move, deletePokemon, id, greeting } = this.props.location.state
     const { showForm } = this.state 
     return(
       <>  
+        <h1>PokeShow</h1>
+        <p>{greeting}</p>
         {
           showForm ?
             <PokeForm {...this.props} toggleForm={this.toggleForm} />
           :
           <div>
-            <h1>Name: 
-              <Link to={{
-                pathname: `/pokemon/${id}`,
-                state: { name, location, level, move, id, greeting: 'hello' }
-              }}>
-                {name}
-              </Link>
-            </h1>
+            <h1>Name: {name}</h1>
             <p>Location: {location}</p>
             <p>Level: {level}</p>
             <p>Move: {move}</p>
             <Button onClick={this.toggleForm}>
               Edit
             </Button>
-            <Button>
+            <Button onClick={() => deletePokemon(id)}>
               Delete
             </Button>
           </div>
@@ -42,4 +36,4 @@ class Pokemon extends Component {
   }
 }
 
-export default Pokemon;
+export default PokeShow;
